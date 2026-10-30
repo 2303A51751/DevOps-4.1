@@ -1,0 +1,22 @@
+.site-header { position: relative; z-index: 2; border-bottom: 1px solid var(--line); background: var(--paper); }
+.header-inner { display: flex; width: min(1180px, calc(100% - 48px)); min-height: 76px; align-items: center; justify-content: space-between; gap: 28px; margin: 0 auto; }
+.wordmark { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-family: var(--serif); font-size: 1.35rem; text-decoration: none; }
+.wordmark-mark { display: grid; width: 34px; height: 34px; place-items: center; background: var(--coral); color: white; font-family: var(--serif); font-size: 1.2rem; }
+.wordmark-period { color: var(--coral); }
+.main-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 38px); }
+.nav-link { position: relative; padding: 28px 0 25px; color: #62675f; font-size: .83rem; font-weight: 700; text-decoration: none; }
+.nav-link::after { position: absolute; right: 0; bottom: 17px; left: 0; height: 2px; background: var(--coral); content: ''; transform: scaleX(0); transform-origin: left; transition: transform 160ms ease; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+.nav-link.active::after { transform: scaleX(1); }
+.cart-link { display: flex; align-items: center; gap: 7px; color: var(--ink); font-size: .83rem; font-weight: 800; text-decoration: none; }
+.bag-icon { position: relative; width: 15px; height: 13px; margin-top: 5px; border: 1.5px solid currentColor; border-radius: 1px; }
+.bag-icon::before { position: absolute; top: -7px; left: 3px; width: 6px; height: 6px; border: 1.5px solid currentColor; border-bottom: 0; border-radius: 6px 6px 0 0; content: ''; }
+.cart-count { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; background: var(--lime); font-size: .7rem; }
+@media (max-width: 650px) {
+  .header-inner { width: calc(100% - 32px); min-height: 68px; flex-wrap: wrap; gap: 0 14px; padding: 12px 0 0; }
+  .wordmark { font-size: 1.15rem; }
+  .main-nav { order: 3; width: 100%; justify-content: space-between; gap: 8px; }
+  .nav-link { padding: 13px 0 15px; font-size: .76rem; }
+  .nav-link::after { bottom: 8px; }
+  .cart-link { margin-left: auto; }
+}
